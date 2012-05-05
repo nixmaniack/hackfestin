@@ -7,8 +7,10 @@ def getMeFeeds():
     webxml = urllib.urlopen("http://www.phoronix.com/rss.php")
     xmldoc=minidom.parse(webxml)
     linksdata = xmldoc.getElementsByTagName("link")
-    for ele in linksdata:
-        print ele.firstChild.data
+    titlesdata = xmldoc.getElementsByTagName("title")
+    for i in xrange(linksdata.length):
+        print linksdata[i].firstChild.data
+        print titlesdata[i].firstChild.data
 
 if __name__ == "__main__":
     getMeFeeds()
