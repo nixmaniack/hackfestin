@@ -9,8 +9,8 @@ def getMeFeeds():
     linksdata = xmldoc.getElementsByTagName("link")
     titlesdata = xmldoc.getElementsByTagName("title")
     for i in xrange(linksdata.length):
-        print linksdata[i].firstChild.data
         print titlesdata[i].firstChild.data
+        print linksdata[i].firstChild.data
 
 if __name__ == "__main__":
     getMeFeeds()
